@@ -21,8 +21,6 @@ with open(ignore, mode="r", encoding="utf8") as file:
     for i_scan in file:
         ignore_list.append(i_scan.rstrip("\n"))
 
-print(ignore_list)
-
 #creates the files neccesary in the directory of the .py file
 music_files = (__file__.replace(os.path.basename(__file__),'') + "music_files.txt")
 album_files = (__file__.replace(os.path.basename(__file__),'') + "album_files.txt")
