@@ -29,7 +29,7 @@ with open(music_files, mode="w", encoding="utf8") as m_file:
     for music in list(desktop.rglob("*")):
         m_file.write(str(music) + "\n")
 
-for root, dirs, files in os.walk("D:\p_Music"):
+for root, dirs, files in os.walk(config["directory"]):
     for file in files:
         if file.endswith(tuple(file_types)):
             album_files_list.append(root)
