@@ -1,4 +1,5 @@
 ---
+#the file types the program searches for
 #add or remove audio file types to your liking
 file_types: 
   - .flac
