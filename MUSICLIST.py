@@ -12,6 +12,7 @@ ignore = (__file__.replace(os.path.basename(__file__),'') + "ignore.txt")
 album_files_list = []
 new_files_list = []
 
+#the file types the program searches for
 file_types = config["file_types"]
 
 #albums that the program picks up that you want to ignore
@@ -19,6 +20,8 @@ ignore_list = []
 with open(ignore, mode="r", encoding="utf8") as file:
     for i_scan in file:
         ignore_list.append(i_scan.rstrip("\n"))
+
+print(ignore_list)
 
 #creates the files neccesary in the directory of the .py file
 music_files = (__file__.replace(os.path.basename(__file__),'') + "music_files.txt")
@@ -40,6 +43,7 @@ for n, album_name in enumerate(album_files_list):
             #splits the address into a list, split with \
             album_name = str(album_name).split("\\")
             del album_name [:-2]
+            #if you want albums sorted by ARTIST | ALBUM switch the numbers around
             if config["order"] == "artist":
                 album_name = str(album_name[0]) + " - " + str(album_name[1])
                 new_files_list.append(album_name)
@@ -53,8 +57,6 @@ for n, album_name in enumerate(album_files_list):
             del album_name [:-1]
             album_name = ''.join(album_name)
             new_files_list.append(album_name)
-        
-
 
 #sorts the list alphabetically (which i think is already done but idc)
 new_files_list.sort()
@@ -63,7 +65,7 @@ new_file_list_copy = new_files_list[:]
 
 for item_remove in new_file_list_copy:
     if str(item_remove) in ignore_list:
-        new_files_list.remove(str(item_remove))
+        new_files_list.remove(item_remove)
 
 try:
     open(album_files, encoding="utf8")
