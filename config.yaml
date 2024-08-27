@@ -1,0 +1,23 @@
+---
+#add or remove audio file types to your liking
+file_types: 
+  - .flac
+  - .mp3
+  - .wav
+  - .m4a
+  - .alac
+  - .ogg
+  - .aac
+  - .opus
+  - .pcm
+
+#double = artist\album
+#single = 1 folder named "artist - album" (or vice versa)
+album_dir: double
+
+#directory of main music folder
+directory: null
+
+#either artist or album first when using double
+#ignored when using single
+order: album
