@@ -1,8 +1,10 @@
 import pathlib
+from pathlib import Path
 import os
 import yaml
 
-config = yaml.safe_load(open(r"C:\Users\GGPC\Downloads\config.yaml"))
+config_path = (__file__.replace(os.path.basename(__file__),'') + "config.yaml")
+config = yaml.safe_load(open(config_path))
 
 #imports the list of ignored albums (from ignore.txt)
 ignore = (__file__.replace(os.path.basename(__file__),'') + "ignore.txt")
@@ -10,7 +12,6 @@ ignore = (__file__.replace(os.path.basename(__file__),'') + "ignore.txt")
 album_files_list = []
 new_files_list = []
 
-#the file types the program searches for
 file_types = config["file_types"]
 
 #albums that the program picks up that you want to ignore
@@ -23,8 +24,6 @@ with open(ignore, mode="r", encoding="utf8") as file:
 music_files = (__file__.replace(os.path.basename(__file__),'') + "music_files.txt")
 album_files = (__file__.replace(os.path.basename(__file__),'') + "album_files.txt")
 
-
-#replace * with main music directory
 desktop = pathlib.Path(config["directory"])
 with open(music_files, mode="w", encoding="utf8") as m_file:
     for music in list(desktop.rglob("*")):
@@ -41,7 +40,6 @@ for n, album_name in enumerate(album_files_list):
             #splits the address into a list, split with \
             album_name = str(album_name).split("\\")
             del album_name [:-2]
-            #if you want albums sorted by ARTIST | ALBUM switch the numbers around
             if config["order"] == "artist":
                 album_name = str(album_name[0]) + " - " + str(album_name[1])
                 new_files_list.append(album_name)
