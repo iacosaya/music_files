@@ -3,10 +3,13 @@ Repo for mass reading of music folders and subfolders.
 
 # BASIC GUIDE
 
-Edit config.yaml to your liking, instructions on configurations are inside the file.
-When done, run "run.bat."
+1. Download the code as a .zip file
 
-Add any albums that are unwanted to "ignore.txt", seperated by a newline
+2. Edit config.yaml to your liking, instructions on configurations are inside the file.
+
+3. When done, run "run.bat."
+
+Add any albums that are unwanted to "ignore.txt", seperated by a newline.
 
 # INFO
 
