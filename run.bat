@@ -1,2 +1,4 @@
 @echo off
-python MUSICLIST.py %*
+python music_list.py
+python info.py
+PAUSE
