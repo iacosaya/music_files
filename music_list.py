@@ -117,7 +117,9 @@ with open(album_files, "r", encoding="utf8") as file:
 for line in data[:]:
     if line.rstrip("\n") not in new_file_list_data:
         if (line[:2] == config["ignore"]) or (line.strip() == ""):
-                ""
+            ""
+        elif line in ignore_list:
+            ""
         else:
             #removes any lines that DON'T start with ignore config from the text file
             data.remove(line)
