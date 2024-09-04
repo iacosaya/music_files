@@ -17,7 +17,7 @@ file_types:
 album_dir: double
 
 #directory of main music folder (without quotation marks)
-directory: D:\p_Music
+directory: bull
 
 #either artist or album first when using double
 #ignored when using single
