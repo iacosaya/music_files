@@ -1,5 +1,4 @@
 ---
-#the file types the program searches for
 #add or remove audio file types to your liking
 file_types: 
   - .flac
@@ -12,13 +11,18 @@ file_types:
   - .opus
   - .pcm
 
+#triple = artist\album\cd
 #double = artist\album
 #single = 1 folder named "artist - album" (or vice versa)
 album_dir: double
 
-#directory of main music folder
-directory: null
+#directory of main music folder (without quotation marks)
+directory: D:\p_Music
 
 #either artist or album first when using double
 #ignored when using single
 order: album
+
+#ignores lines that start with certain characters (can be any one you want)
+#used for optional organising
+ignore: --
