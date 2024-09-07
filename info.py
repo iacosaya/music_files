@@ -37,11 +37,13 @@ with open(album_files, "r+", encoding="utf8") as file:
             sort_mode = music_sort[line]
         if line not in music_sort:
             try:
-                music_sort_count[list(music_sort_count)[sort_mode - 1]] += 1
+                if len(line) > 0:
+                    music_sort_count[list(music_sort_count)[sort_mode - 1]] += 1
             except IndexError:
                 print("No sort types found.")
                 exit()
-            music_len += 1
+            if len(line) > 0:
+                music_len += 1
 
 def percentage(numerate, total):
     #generate a percentage
